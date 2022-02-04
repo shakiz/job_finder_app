@@ -11,17 +11,270 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: const Text("Animation Widget"),
-        leading: Builder(
-          builder: (context) => InkWell(
-            onTap: () {
+    return SafeArea(
+      child: Scaffold(
+        body: body(),
+      ),
+    );
+  }
 
-            },
+  Widget body() {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.all(24),
+      color: Colors.black12.withOpacity(0.01),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Image.asset(
+                  "assets/icons/menu.png",
+                  height: 42,
+                  width: 42,
+                  color: Colors.black87.withOpacity(0.7),
+                ),
+              ),
+              Container(
+                  alignment: Alignment.topRight,
+                  child: Row(
+                    children: [
+                      Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(28),
+                              color: Colors.white),
+                          padding: const EdgeInsets.all(12),
+                          child: Image.asset(
+                            "assets/icons/search.png",
+                            height: 32,
+                            width: 32,
+                            color: Colors.black87.withOpacity(0.8),
+                          )),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(28),
+                            color: Colors.white),
+                        padding: const EdgeInsets.all(12),
+                        child: Icon(
+                          Icons.person,
+                          size: 32,
+                          color: Colors.black87.withOpacity(0.8),
+                        ),
+                      ),
+                    ],
+                  ))
+            ],
           ),
-        ),
+          Container(
+            margin: const EdgeInsets.only(top: 24),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text("Hello",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black87.withOpacity(0.4),
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  )),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 2),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text("Rakib K.",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black87.withOpacity(0.8),
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  )),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.orangeAccent.withOpacity(0.2)),
+            padding: const EdgeInsets.all(16),
+            margin: const EdgeInsets.only(top: 16),
+            alignment: Alignment.centerLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("50% off",
+                    style: TextStyle(
+                      color: Colors.black87.withOpacity(0.6),
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    )),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text("take any courses",
+                    style: TextStyle(
+                      color: Colors.black87.withOpacity(0.6),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    )),
+                const SizedBox(
+                  height: 8,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      color: Colors.black87),
+                  padding: const EdgeInsets.all(12),
+                  child: Text("Join Now",
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.7),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      )),
+                )
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          Text("Find your job",
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                color: Colors.black87.withOpacity(0.6),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              )),
+          const SizedBox(
+            height: 16,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.40,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.blueAccent.withOpacity(0.2)),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 24,),
+                    Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(21),
+                            color: Colors.white),
+                        padding: const EdgeInsets.all(12),
+                        child: Image.asset(
+                          "assets/icons/remote_job.png",
+                          height: 32,
+                          width: 32,
+                        )),
+                    const SizedBox(height: 16,),
+                    Text("44.8k",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          color: Colors.black87.withOpacity(0.8),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    const SizedBox(height: 4,),
+                    Text("Remote Job",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          color: Colors.black87.withOpacity(0.6),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    const SizedBox(height: 24,),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 32,),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.40,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.blueAccent.withOpacity(0.2)),
+                child: Column(
+                  children: [
+                    Column(
+                      children: [
+                        const SizedBox(height: 24,),
+                        Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(21),
+                                color: Colors.white),
+                            padding: const EdgeInsets.all(12),
+                            child: Image.asset(
+                              "assets/icons/remote_job.png",
+                              height: 32,
+                              width: 32,
+                            )),
+                        const SizedBox(height: 16,),
+                        Text("44.8k",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Colors.black87.withOpacity(0.8),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const SizedBox(height: 4,),
+                        Text("Remote Job",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Colors.black87.withOpacity(0.6),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const SizedBox(height: 24,),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        const SizedBox(height: 24,),
+                        Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(21),
+                                color: Colors.white),
+                            padding: const EdgeInsets.all(12),
+                            child: Image.asset(
+                              "assets/icons/remote_job.png",
+                              height: 32,
+                              width: 32,
+                            )),
+                        const SizedBox(height: 16,),
+                        Text("44.8k",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Colors.black87.withOpacity(0.8),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const SizedBox(height: 4,),
+                        Text("Remote Job",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Colors.black87.withOpacity(0.6),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const SizedBox(height: 24,),
+                      ],
+                    ),
+                  ],
+                )
+              )
+            ],
+          )
+        ],
       ),
     );
   }

@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
           () async {
         timer.cancel();
         //region set home
-        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
         //endregion
       },
     );
@@ -38,47 +38,45 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/starter-image.jpg'),
-                    fit: BoxFit.fill
-                )
-            ),
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 96),
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  Text(
-                    "Spice of India",
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 16, right: 16),
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                    "Zovo",
+                    textAlign: TextAlign.start,
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 32.0,
-                        height: 1.4,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.end,
-                  ),
-                  Text(
-                    "Now deliver to your door 24/7",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16.0,
-                        height: 1.4,),
-                    textAlign: TextAlign.end,
-                  ),
-                ],
-              )
+                      color: Colors.black87.withOpacity(0.6), fontSize: 36, fontWeight: FontWeight.bold,)
+                ),
+              ),
             ),
-          ),
-        ],
+            Container(
+              margin: const EdgeInsets.only(left: 16, right: 16),
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Find your dream job here",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black87.withOpacity(0.6), fontSize: 24, fontWeight: FontWeight.bold,)
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(48),
+              width: MediaQuery.of(context).size.width,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Image.asset("assets/images/user_with_mobile.png")
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

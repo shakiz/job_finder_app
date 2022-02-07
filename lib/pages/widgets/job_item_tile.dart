@@ -39,26 +39,30 @@ class _JobItemTileState extends State<JobItemTile> {
                     widget.jobData.CompanyLogo,
                     height: 42,
                     width: 42,
-                    color: Colors.black87.withOpacity(0.7),
+                    color: Colors.black87.withOpacity(0.8),
                   )),
               title: Text(
                 widget.jobData.JobTitle,
                 style: TextStyle(
-                    color: Colors.black87.withOpacity(0.6),
+                    color: Colors.black87.withOpacity(0.8),
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(
-                "${widget.jobData.SalaryRange}/month",
-                style: TextStyle(
-                  color: Colors.black87.withOpacity(0.6),
-                  fontSize: 16,
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text(
+                  "${widget.jobData.SalaryRange}/month",
+                  style: TextStyle(
+                    color: Colors.black87.withOpacity(0.7),
+                    fontSize: 16,
+                  ),
                 ),
               ),
               trailing: Image.asset(
                 "assets/icons/save.png",
                 height: 32,
                 width: 32,
+                color: Colors.black54.withOpacity(0.8),
               ),
             ),
             Row(
@@ -67,13 +71,13 @@ class _JobItemTileState extends State<JobItemTile> {
                 Chip(
                   label: Text(widget.jobData.JobPosition),
                   backgroundColor: Colors.grey.withOpacity(0.03),
-                  labelStyle: TextStyle(color: Colors.black54.withOpacity(0.7)),
+                  labelStyle: TextStyle(color: Colors.black87.withOpacity(0.9)),
                 ),
                 const SizedBox(width: 12,),
                 Chip(
                   label: Text(widget.jobData.JobType),
                   backgroundColor: Colors.grey.withOpacity(0.03),
-                  labelStyle: TextStyle(color: Colors.black54.withOpacity(0.7)),
+                  labelStyle: TextStyle(color: Colors.black54.withOpacity(0.9)),
                 ),
                 const SizedBox(width: 12,),
                 Align(

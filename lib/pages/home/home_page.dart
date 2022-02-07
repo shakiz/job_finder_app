@@ -4,6 +4,8 @@ import 'package:job_finder_app/cores/app_data.dart';
 import 'package:job_finder_app/models/job.dart';
 import 'package:job_finder_app/pages/widgets/job_item_tile.dart';
 
+import '../bottom_sheet_view.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -49,17 +51,29 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topRight,
                     child: Row(
                       children: [
-                        Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(28),
-                                color: Colors.white),
-                            padding: const EdgeInsets.all(12),
-                            child: Image.asset(
-                              "assets/icons/search.png",
-                              height: 32,
-                              width: 32,
-                              color: Colors.black87.withOpacity(0.8),
-                            )),
+                        InkWell(
+                          onTap: () async {
+                            showModalBottomSheet(
+                                context: context,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                builder: (context) {
+                                  return BottomSheetView();
+                                });
+                          },
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(28),
+                                  color: Colors.white),
+                              padding: const EdgeInsets.all(12),
+                              child: Image.asset(
+                                "assets/icons/search.png",
+                                height: 32,
+                                width: 32,
+                                color: Colors.black87.withOpacity(0.8),
+                              )),
+                        ),
                         const SizedBox(
                           width: 16,
                         ),

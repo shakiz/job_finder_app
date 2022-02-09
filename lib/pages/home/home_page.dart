@@ -54,12 +54,15 @@ class _HomePageState extends State<HomePage> {
                         InkWell(
                           onTap: () async {
                             showModalBottomSheet(
+                              elevation: 8,
+                                isDismissible: true,
+                                isScrollControlled: true,
                                 context: context,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 builder: (context) {
-                                  return BottomSheetView();
+                                  return BottomSheetView(MediaQuery.of(context).size.height - 160);
                                 });
                           },
                           child: Container(

@@ -31,14 +31,12 @@ class _JobItemTileState extends State<JobItemTile> {
           children: [
             ListTile(
               leading: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(24),
                       color: Colors.purpleAccent.withOpacity(0.3)),
                   child: Image.asset(
                     widget.jobData.CompanyLogo,
-                    height: 42,
-                    width: 42,
                     color: Colors.black87.withOpacity(0.8),
                   )),
               title: Text(

@@ -85,7 +85,7 @@ class _JobDetailsState extends State<JobDetails> {
                   child: Column(
                     children: [
                       const SizedBox(height: 48,),
-                      Text(widget.jobData.JobPosition, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w400, color: Colors.black87),),
+                      Text(widget.jobData.JobTitle, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w400, color: Colors.black87),),
                       const SizedBox(height: 24,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -242,7 +242,7 @@ class _JobDetailsState extends State<JobDetails> {
               child: Text("•  ${widget.jobData.JobShortDescription}",
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Colors.black87.withOpacity(0.8),
+                    color: Colors.black87.withOpacity(0.7),
                     fontSize: 20,
                   )),
             ),
@@ -252,7 +252,7 @@ class _JobDetailsState extends State<JobDetails> {
               child: Text("•  ${widget.jobData.JobLongDescription}",
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Colors.black87.withOpacity(0.8),
+                    color: Colors.black87.withOpacity(0.7),
                     fontSize: 20,
                   )),
             ),
@@ -263,7 +263,7 @@ class _JobDetailsState extends State<JobDetails> {
                 width: MediaQuery.of(context).size.width,
                 height: 56,
                 padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.all(16),
+                margin: const EdgeInsets.only(top: 16, left: 16, right: 16, bottom: 32),
                 decoration: BoxDecoration(
                   color: Colors.black87,
                   borderRadius: BorderRadius.circular(12),

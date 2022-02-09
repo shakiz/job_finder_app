@@ -16,7 +16,7 @@ class _JobDetailsState extends State<JobDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black12.withOpacity(0.01),
         elevation: 0,
         title: const Text(""),
         leading: Builder(
@@ -53,7 +53,7 @@ class _JobDetailsState extends State<JobDetails> {
   Widget body() {
     return SingleChildScrollView(
       child: Container(
-        color: Colors.white,
+        color: Colors.black12.withOpacity(0.01),
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
@@ -131,9 +131,12 @@ class _JobDetailsState extends State<JobDetails> {
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.black87.withOpacity(0.6),
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.bold,
                         )),
+                    const SizedBox(
+                      height: 4,
+                    ),
                     Text(widget.jobData.SalaryRange,
                         textAlign: TextAlign.start,
                         style: TextStyle(
@@ -169,9 +172,12 @@ class _JobDetailsState extends State<JobDetails> {
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.black87.withOpacity(0.6),
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.bold,
                         )),
+                    const SizedBox(
+                      height: 4,
+                    ),
                     Text(widget.jobData.JobType,
                         textAlign: TextAlign.start,
                         style: TextStyle(
@@ -207,9 +213,12 @@ class _JobDetailsState extends State<JobDetails> {
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.black87.withOpacity(0.6),
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.bold,
                         )),
+                    const SizedBox(
+                      height: 4,
+                    ),
                     Text(widget.jobData.JobPosition,
                         textAlign: TextAlign.start,
                         style: TextStyle(

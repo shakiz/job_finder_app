@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:job_finder_app/cores/app_data.dart';
 import 'package:job_finder_app/models/job.dart';
+import 'package:job_finder_app/pages/courses/course_list_page.dart';
 import 'package:job_finder_app/pages/widgets/job_item_tile.dart';
 
 import '../bottom_sheet_view.dart';
@@ -149,17 +150,22 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 8,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(28),
-                        color: Colors.black87),
-                    padding: const EdgeInsets.all(12),
-                    child: Text("Join Now",
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.7),
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        )),
+                  InkWell(
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => CourseListPage()));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(28),
+                          color: Colors.black87),
+                      padding: const EdgeInsets.all(12),
+                      child: Text("Join Now",
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.7),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ),
                   )
                 ],
               ),
@@ -175,173 +181,178 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(
-              height: 16,
+              height: 8,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.42,
-                  height: 196,
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.blueAccent.withOpacity(0.2)),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(21),
-                              color: Colors.white),
-                          padding: const EdgeInsets.all(12),
-                          child: Image.asset(
-                            "assets/icons/remote_job.png",
-                            height: 32,
-                            width: 32,
-                          )),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Text("44.8k",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            color: Colors.black87.withOpacity(0.8),
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      Text("Remote Job",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            color: Colors.black87.withOpacity(0.6),
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                    ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 4,
+                    height: 196,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.blueAccent.withOpacity(0.2)),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(21),
+                                color: Colors.white),
+                            padding: const EdgeInsets.all(12),
+                            child: Image.asset(
+                              "assets/icons/remote_job.png",
+                              height: 32,
+                              width: 32,
+                            )),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Text("44.8k",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Colors.black87.withOpacity(0.8),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        Text("Remote Job",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Colors.black87.withOpacity(0.6),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
-                  width: 16,
+                  width: 8,
                 ),
-                Container(
-                    width: MediaQuery.of(context).size.width * 0.42,
-                    padding: const EdgeInsets.all(12),
-                    height: 228,
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.purpleAccent.withOpacity(0.2)),
-                          height: 96,
-                          child: Row(
-                            children: [
-                              Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(21),
-                                      color: Colors.white),
-                                  padding: const EdgeInsets.all(12),
-                                  margin: const EdgeInsets.all(12),
-                                  child: Image.asset(
-                                    "assets/icons/full_time_job.png",
-                                    height: 32,
-                                    width: 32,
-                                  )),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  Text("66.8k",
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                        color: Colors.black87.withOpacity(0.8),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(
-                                    height: 4,
-                                  ),
-                                  Text("Full time",
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                        color: Colors.black87.withOpacity(0.6),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                ],
-                              ),
-                            ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width * 4,
+                      padding: const EdgeInsets.all(12),
+                      height: 228,
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.purpleAccent.withOpacity(0.2)),
+                            height: 96,
+                            child: Row(
+                              children: [
+                                Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(21),
+                                        color: Colors.white),
+                                    padding: const EdgeInsets.all(12),
+                                    margin: const EdgeInsets.all(12),
+                                    child: Image.asset(
+                                      "assets/icons/full_time_job.png",
+                                      height: 32,
+                                      width: 32,
+                                    )),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    Text("66.8k",
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          color: Colors.black87.withOpacity(0.8),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                    const SizedBox(
+                                      height: 4,
+                                    ),
+                                    Text("Full time",
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          color: Colors.black87.withOpacity(0.6),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Container(
-                          height: 96,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.greenAccent.withOpacity(0.4)),
-                          child: Row(
-                            children: [
-                              Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(21),
-                                      color: Colors.white),
-                                  padding: const EdgeInsets.all(12),
-                                  margin: const EdgeInsets.all(12),
-                                  child: Image.asset(
-                                    "assets/icons/heart.png",
-                                    height: 32,
-                                    width: 32,
-                                  )),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  Text("38.9k",
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                        color: Colors.black87.withOpacity(0.8),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(
-                                    height: 4,
-                                  ),
-                                  Text("Part time",
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                        color: Colors.black87.withOpacity(0.6),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                ],
-                              ),
-                            ],
+                          const SizedBox(
+                            height: 8,
                           ),
-                        )
-                      ],
-                    ))
+                          Container(
+                            height: 96,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.greenAccent.withOpacity(0.4)),
+                            child: Row(
+                              children: [
+                                Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(21),
+                                        color: Colors.white),
+                                    padding: const EdgeInsets.all(12),
+                                    margin: const EdgeInsets.all(12),
+                                    child: Image.asset(
+                                      "assets/icons/heart.png",
+                                      height: 32,
+                                      width: 32,
+                                    )),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    Text("38.9k",
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          color: Colors.black87.withOpacity(0.8),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                    const SizedBox(
+                                      height: 4,
+                                    ),
+                                    Text("Part time",
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          color: Colors.black87.withOpacity(0.6),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      )),
+                )
               ],
             ),
             const SizedBox(

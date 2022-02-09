@@ -15,8 +15,8 @@ class _BottomSheetViewState extends State<BottomSheetView> {
       dropDownValueSubCategory = 'UI/UX Design',
       dropDownValueLocation = 'Bangladesh';
   bool isFullTime = false, isPartTime = false, isRemote = false;
-  RangeValues _rangeValues = RangeValues(1, 9);
   double minSalary = 10, maxSalary = 100;
+  RangeValues _rangeValues = RangeValues(10, 100);
 
   @override
   void didChangeDependencies() {
@@ -26,7 +26,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
   @override
   Widget build(BuildContext context) {
     RangeLabels _rangeLabels = RangeLabels(
-        _rangeValues.start.toString(), (_rangeValues.end).toString());
+        _rangeValues.start.toString(), _rangeValues.end.toString());
 
     return SingleChildScrollView(
       child: Container(
@@ -233,6 +233,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
               ),
               child: RangeSlider(
                 values: _rangeValues,
+                labels: _rangeLabels,
                 min: minSalary,
                 max: maxSalary,
                 divisions: 20,
@@ -257,32 +258,34 @@ class _BottomSheetViewState extends State<BottomSheetView> {
               height: 8,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                  onTap: () async {
-                    setState(() {
-                      isFullTime = !isFullTime;
-                    });
-                  },
-                  child: Container(
-                    height: 42,
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: isFullTime
-                            ? Colors.yellow.withOpacity(0.6)
-                            : Colors.white.withOpacity(0.4),
-                        border: isFullTime
-                            ? Border.all(color: Colors.transparent)
-                            : Border.all(color: Colors.black12)),
-                    padding: const EdgeInsets.only(
-                        top: 8, bottom: 8, left: 12, right: 12),
-                    child: Text(
-                      "Full Time",
-                      style: TextStyle(
-                        color: isFullTime ? Colors.black87 : Colors.grey,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () async {
+                      setState(() {
+                        isFullTime = !isFullTime;
+                      });
+                    },
+                    child: Container(
+                      height: 42,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * 3,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: isFullTime
+                              ? Colors.yellow.withOpacity(0.6)
+                              : Colors.white.withOpacity(0.4),
+                          border: isFullTime
+                              ? Border.all(color: Colors.transparent)
+                              : Border.all(color: Colors.black12)),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 12, right: 12),
+                      child: Text(
+                        "Full Time",
+                        style: TextStyle(
+                          color: isFullTime ? Colors.black87 : Colors.grey,
+                        ),
                       ),
                     ),
                   ),
@@ -290,62 +293,66 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                 const SizedBox(
                   width: 8,
                 ),
-                InkWell(
-                  onTap: () async {
-                    setState(() {
-                      isPartTime = !isPartTime;
-                    });
-                  },
-                  child: Container(
-                    height: 42,
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: isPartTime
-                            ? Colors.yellow.withOpacity(0.6)
-                            : Colors.white.withOpacity(0.4),
-                        border: isPartTime
-                            ? Border.all(color: Colors.transparent)
-                            : Border.all(color: Colors.black12)),
-                    padding: const EdgeInsets.only(
-                        top: 8, bottom: 8, left: 12, right: 12),
-                    child: Text(
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () async {
+                      setState(() {
+                        isPartTime = !isPartTime;
+                      });
+                    },
+                    child: Container(
+                      height: 42,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * 3,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: isPartTime
+                              ? Colors.yellow.withOpacity(0.6)
+                              : Colors.white.withOpacity(0.4),
+                          border: isPartTime
+                              ? Border.all(color: Colors.transparent)
+                              : Border.all(color: Colors.black12)),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 12, right: 12),child: Text(
                       "Part Time",
                       style: TextStyle(
                         color: isPartTime ? Colors.black87 : Colors.grey,
                       ),
                     ),
+                    ),
                   ),
                 ),
                 const SizedBox(
                   width: 8,
                 ),
-                InkWell(
-                  onTap: () async {
-                    setState(() {
-                      isRemote = !isRemote;
-                    });
-                  },
-                  child: Container(
-                    height: 42,
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: isRemote
-                            ? Colors.yellow.withOpacity(0.6)
-                            : Colors.white.withOpacity(0.4),
-                        border: isRemote
-                            ? Border.all(color: Colors.transparent)
-                            : Border.all(color: Colors.black12)),
-                    padding: const EdgeInsets.only(
-                        top: 8, bottom: 8, left: 12, right: 12),
-                    child: Text(
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () async {
+                      setState(() {
+                        isRemote = !isRemote;
+                      });
+                    },
+                    child: Container(
+                      height: 42,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * 3,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: isRemote
+                              ? Colors.yellow.withOpacity(0.6)
+                              : Colors.white.withOpacity(0.4),
+                          border: isRemote
+                              ? Border.all(color: Colors.transparent)
+                              : Border.all(color: Colors.black12)),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 12, right: 12),child: Text(
                       "Remote",
                       style: TextStyle(
                         color: isRemote ? Colors.black87 : Colors.grey,
                       ),
+                    ),
                     ),
                   ),
                 ),

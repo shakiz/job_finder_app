@@ -1,6 +1,14 @@
 # job_finder_app
 
-A simple job finder app.
+This was a practice purpose design for android and iOS, a kind of late-night work. Though I haven't added any kind of backend service it's just some static information. Used flutter for the development. You may use the design by forking it from my repo.
+
+Thanks!!
+
+# Samples
+
+<img src="/assets/mockups/mockup1.png" alt="Mock Up 1"/>
+<img src="/assets/mockups/mockup2.png" alt="Mock Up 2"/>
+
 
 ## Getting Started
 

@@ -6,8 +6,8 @@ Thanks!!
 
 # Samples
 
-<img src="/assets/mockups/mockup1.png" alt="Mock Up 1"/>
-<img src="/assets/mockups/mockup2.png" alt="Mock Up 2"/>
+![Alt text](/assets/mockups/mockup1.png?raw=true "Mock Up 1")
+![Alt text](/assets/mockups/mockup2.png?raw=true "Mock Up 2")
 
 
 ## Getting Started

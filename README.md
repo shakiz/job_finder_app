@@ -6,8 +6,8 @@ Thanks!!
 
 # Samples
 
-![Alt text](/assets/mockups/mockup1.png?raw=true "Mock Up 1")
-![Alt text](/assets/mockups/mockup2.png?raw=true "Mock Up 2")
+![Alt Text](https://raw.githubusercontent.com/shakiz/job_finder_app/master/assets/mockups/mockup1.PNG)
+![Alt Text](https://raw.githubusercontent.com/shakiz/job_finder_app/master/assets/mockups/mockup2.PNG)
 
 
 ## Getting Started

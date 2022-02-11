@@ -24,6 +24,20 @@ class _CourseItemTileState extends State<CourseItemTile> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey[500]!,
+                offset: const Offset(4, 4),
+                blurRadius: 15,
+                spreadRadius: 1
+            ),
+            const BoxShadow(
+                color: Colors.white,
+                offset: Offset(-4, -4),
+                blurRadius: 15,
+                spreadRadius: 1
+            ),
+          ]
         ),
         width: MediaQuery.of(context).size.width,
         child: Column(
